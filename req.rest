@@ -1,0 +1,23 @@
+POST http://localhost:5000/api/user
+Content-Type: application/json
+
+{
+    "name":"yogesh",
+    "email":"yogesh@email.com",
+    "password":"yogesh"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"rohith@email.com",
+    "password":"rohith"
+}
+
+###
+
+GET http://localhost:5000/api/auth/refresh_token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzQ2YjZjZGItNjIwOS00NzI0LWJhYTktMTQzYjM1NTlkZWNkIiwidXNlcl9uYW1lIjoicm9oaXRoIiwidXNlcl9lbWFpbCI6InJvaGl0aEBlbWFpbC5jb20iLCJpYXQiOjE2NDkzNDg5NDUsImV4cCI6MTY0OTQzNTM0NX0.dYJYKIYXJZNHLJltqzIucmf7jIHFBy8Dv5xFq-lJ-xA
