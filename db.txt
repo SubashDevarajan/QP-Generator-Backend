@@ -1,13 +1,8 @@
-CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CourseName varchar(150),PRIMARY KEY(CourseCode));
-
+CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CouseName varchar(150),PRIMARY KEY(CourseCode));
 CREATE TABLE COURSE_OUTCOME(CourseCode varchar(10),CourseOutcomes varchar(500),FOREIGN KEY (CourseCode) REFERENCES Course_Details(CourseCode));
-
 CREATE TABLE BL_DETAILS(BL_LEVELS varchar(5), KEYWORDS varchar(20));
 
 Insert into Course_details values ('XC7076','Pattern Recognition');
-
-
-
 Insert into Course_details values ('XC7871','Machine Learning Techniques');
 
 Insert into Course_outcome values ('XC7076','To know about Supervised and unsupervised Learning.');
@@ -15,8 +10,12 @@ Insert into Course_outcome values ('XC7076','To study about feature extraction a
 Insert into Course_outcome values ('XC7076','To explore different classification models.');
 Insert into Course_outcome values ('XC7076','To understand Fuzzy Pattern Classifiers and Perception.');
 
-CREATE TABLE BL_DETAILS(BL_LEVEL varchar(15), KEYWORDS varchar(20));
-
 Insert into BL_Details values ('Remembering', 'Define');
 Insert into BL_Details values ('Remembering', 'Choose');
 Insert into BL_Details values ('Understanding', 'Classify');
+Insert into BL_Details values ('Understanding', 'Compare');
+
+
+//CREATE TABLE DETAILS(DEPARTMENT varchar(20), BRANCH varchar(30), SEMESTER varchar(10), REGULATION varchar(8), SUBJECT_CODE_AND_TITLE varchar(50));
+
+CREATE TABLE users(user_name varchar(15),user_email varchar(30), user_password varchar(100));

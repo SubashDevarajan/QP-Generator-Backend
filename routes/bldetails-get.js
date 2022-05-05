@@ -1,17 +1,30 @@
-import express from 'express';
-import pool from '../db.js';
+import express from "express";
+import pool from "../db.js";
+const getbldetails_all = express();
+const getbldetails_blLevel = express();
 
-const getbldetails = express();
-getbldetails.get("/bldetails/:id", async (req, res)=>{
-    try {
-        //const { id, username } = req.body;
-        console.log("hello")
-        const bl = await pool.query("Select * from bl_details Where bl_level=")
-        res.json(bl)
-    }
-    catch (error) {
-        res.status(401).json({error: error.message});
-    }
-})
+getbldetails_all.get("/bldetails_all/", async (req, res) => {
+  try {
+    //const { id, username } = req.body;
+    console.log("hello");
+    const bl = await pool.query("Select * from bl_details");
+    res.json(bl);
+  } catch (error) {
+    res.status(401).json({ error: error.message });
+  }
+});
 
-export default getbldetails;
+getbldetails_blLevel.get("/bldetails_blLevel/", async (req, res) => {
+  try {
+    //const { id, username } = req.body;
+    console.log("hello");
+    const bl = await pool.query("Select * from bl_details Where bl_level=$1", [
+      req.body.bl_level,
+    ]);
+    res.json(bl);
+  } catch (error) {
+    res.status(401).json({ error: error.message });
+  }
+});
+
+export { getbldetails_all, getbldetails_blLevel };

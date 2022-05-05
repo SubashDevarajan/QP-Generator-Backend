@@ -9,7 +9,7 @@ CREATE TABLE users (
     user_password TEXT NOT NULL
 );
 
-CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CouseName varchar(150),PRIMARY KEY(CourseCode));
+CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CourseName varchar(150),PRIMARY KEY(CourseCode));
 Insert into Course_details values ('XC7076','Pattern Recognition');
 Insert into Course_details values ('XC7871','Machine Learning Techniques');
 
@@ -24,3 +24,7 @@ CREATE TABLE BL_DETAILS(BL_LEVEL varchar(15), KEYWORDS varchar(20));
 
 Insert into BL_Details values ('Remembering', 'Define');
 Insert into BL_Details values ('Remembering', 'Choose');
+Insert into BL_Details values ('Understanding', 'Classify');
+Insert into BL_Details values ('Understanding', 'Compare');
+
+CREATE TABLE users(user_name varchar(15),user_email varchar(30), user_password varchar(10));
