@@ -1,31 +1,6 @@
-CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CouseName varchar(150),PRIMARY KEY(CourseCode));
-CREATE TABLE COURSE_OUTCOME(CourseCode varchar(10),CourseOutcomes varchar(500),FOREIGN KEY (CourseCode) REFERENCES Course_Details(CourseCode));
-CREATE TABLE BL_DETAILS(BL_LEVELS varchar(5), KEYWORDS varchar(20));
-
-Insert into Course_details values ('XC7076','Pattern Recognition');
-Insert into Course_details values ('XC7871','Machine Learning Techniques');
-Insert into Course_details values ('XT7851','Cloud Computing');
-Insert into Course_details values ('MA7851','Numerical Methods');
-Insert into Course_details values ('XC7852','Principles of Compiler Design');
-Insert into Course_details values ('XC7853','Software Testing and Quality Assurance');
-
-Insert into Course_outcome values ('XC7076','To know about Supervised and unsupervised Learning.');
-Insert into Course_outcome values ('XC7076','To study about feature extraction and structural pattern recognition.');
-Insert into Course_outcome values ('XC7076','To explore different classification models.');
-Insert into Course_outcome values ('XC7076','To understand Fuzzy Pattern Classifiers and Perception.');
-
-Insert into BL_Details values ('Remembering', 'Define');
-Insert into BL_Details values ('Remembering', 'Choose');
-Insert into BL_Details values ('Understanding', 'Classify');
-Insert into BL_Details values ('Understanding', 'Compare');
-Insert into BL_Details values ('Applying', 'Build');
-Insert into BL_Details values ('Applying', 'Develop');
-Insert into BL_Details values ('Analyzing', 'Analyze');
-Insert into BL_Details values ('Analyzing', 'Assume');
-Insert into BL_Details values ('Evaluating', 'Agree');
-Insert into BL_Details values ('Evaluating', 'Decide');
-Insert into BL_Details values ('Creating', 'Adapt');
-Insert into BL_Details values ('Creating', 'Change');
+CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CourseName varchar(150),PRIMARY KEY(CourseCode));
+CREATE TABLE COURSE_OUTCOME(Levels varchar(5),CourseCode varchar(10),CourseOutcomes varchar(500),FOREIGN KEY (CourseCode) REFERENCES Course_Details(CourseCode));
+CREATE TABLE BL_DETAILS(Levels varchar(5),BL_LEVELS varchar(15), KEYWORDS varchar(20));
 
 //CREATE TABLE DETAILS(DEPARTMENT varchar(20), BRANCH varchar(30), SEMESTER varchar(10), REGULATION varchar(8), SUBJECT_CODE_AND_TITLE varchar(50));
 
@@ -34,3 +9,235 @@ CREATE TABLE users(user_id SERIAL PRIMARY KEY,user_name varchar(15),user_email v
 CREATE TABLE qpdetails(user_id int,qp_info json NOT NULL,qp_details json NOT NULL);
 
 INSERT INTO qpdetails VALUES(1,'{ "customer": "John Doe", "items": {"product": "Beer","qty": 6}}','{ "customer": "John Doe", "items": {"product": "Beer","qty":6},"it": {"product": "Beer","qty": 6},"ems": {"product": "Beer","qty": 6}}');
+
+Insert into BL_Details values ('BL1','Remembering', 'Choose');
+Insert into BL_Details values ('BL1','Remembering', 'Draw');
+Insert into BL_Details values ('BL1','Remembering', 'Describe');
+Insert into BL_Details values ('BL1','Remembering', 'Define');
+Insert into BL_Details values ('BL1','Remembering', 'Find');
+Insert into BL_Details values ('BL1','Remembering', 'How');
+Insert into BL_Details values ('BL1','Remembering', 'Label');
+Insert into BL_Details values ('BL1','Remembering', 'List');
+Insert into BL_Details values ('BL1','Remembering', 'Match');
+Insert into BL_Details values ('BL1','Remembering', 'Name');
+Insert into BL_Details values ('BL1','Remembering', 'Omit');
+Insert into BL_Details values ('BL1','Remembering', 'Recall');
+Insert into BL_Details values ('BL1','Remembering', 'Relate');
+Insert into BL_Details values ('BL1','Remembering', 'Select');
+Insert into BL_Details values ('BL1','Remembering', 'Show');
+Insert into BL_Details values ('BL1','Remembering', 'Spell');
+Insert into BL_Details values ('BL1','Remembering', 'Tell');
+Insert into BL_Details values ('BL1','Remembering', 'What');
+Insert into BL_Details values ('BL1','Remembering', 'When');
+Insert into BL_Details values ('BL1','Remembering', 'Where');
+Insert into BL_Details values ('BL1','Remembering', 'Which');
+Insert into BL_Details values ('BL1','Remembering', 'Who');
+Insert into BL_Details values ('BL1','Remembering', 'Why');
+
+Insert into BL_Details values ('BL2','Understanding', 'Classify');
+Insert into BL_Details values ('BL2','Understanding', 'Compare');
+Insert into BL_Details values ('BL2','Understanding', 'Contrast');
+Insert into BL_Details values ('BL2','Understanding', 'Demonstrate');
+Insert into BL_Details values ('BL2','Understanding', 'Explain');
+Insert into BL_Details values ('BL2','Understanding', 'Extend');
+Insert into BL_Details values ('BL2','Understanding', 'Illustrate');
+Insert into BL_Details values ('BL2','Understanding', 'Outline');
+Insert into BL_Details values ('BL2','Understanding', 'Infer');
+Insert into BL_Details values ('BL2','Understanding', 'Relate');
+Insert into BL_Details values ('BL2','Understanding', 'Rephrase');
+Insert into BL_Details values ('BL2','Understanding', 'Show');
+Insert into BL_Details values ('BL2','Understanding', 'Summarize');
+Insert into BL_Details values ('BL2','Understanding', 'Translate');
+
+Insert into BL_Details values ('BL3','Applying', 'Apply');
+Insert into BL_Details values ('BL3','Applying', 'Build');
+Insert into BL_Details values ('BL3','Applying', 'Choose');
+Insert into BL_Details values ('BL3','Applying', 'Construct');
+Insert into BL_Details values ('BL3','Applying', 'Develop');
+Insert into BL_Details values ('BL3','Applying', 'Experiment with');
+Insert into BL_Details values ('BL3','Applying', 'Identify');
+Insert into BL_Details values ('BL3','Applying', 'Interview');
+Insert into BL_Details values ('BL3','Applying', 'Make use of');
+Insert into BL_Details values ('BL3','Applying', 'Model');
+Insert into BL_Details values ('BL3','Applying', 'Organize');
+Insert into BL_Details values ('BL3','Applying', 'Plan');
+Insert into BL_Details values ('BL3','Applying', 'Select');
+Insert into BL_Details values ('BL3','Applying', 'Solve');
+Insert into BL_Details values ('BL3','Applying', 'Utilize');
+
+Insert into BL_Details values ('BL4','Analysing', 'Analyze');
+Insert into BL_Details values ('BL4','Analysing', 'Assume');
+Insert into BL_Details values ('BL4','Analysing', 'Categorize');
+Insert into BL_Details values ('BL4','Analysing', 'Conclusion');
+Insert into BL_Details values ('BL4','Analysing', 'Contrast');
+Insert into BL_Details values ('BL4','Analysing', 'Discover');
+Insert into BL_Details values ('BL4','Analysing', 'Dissect');
+Insert into BL_Details values ('BL4','Analysing', 'Divide');
+Insert into BL_Details values ('BL4','Analysing', 'Examine');
+Insert into BL_Details values ('BL4','Analysing', 'Function');
+Insert into BL_Details values ('BL4','Analysing', 'Inference');
+Insert into BL_Details values ('BL4','Analysing', 'Inspect');
+Insert into BL_Details values ('BL4','Analysing', 'List');
+Insert into BL_Details values ('BL4','Analysing', 'Motive');
+Insert into BL_Details values ('BL4','Analysing', 'Relationship');
+Insert into BL_Details values ('BL4','Analysing', 'Simplify');
+Insert into BL_Details values ('BL4','Analysing', 'Survey');
+Insert into BL_Details values ('BL4','Analysing', 'Take part in');
+Insert into BL_Details values ('BL4','Analysing', 'Test for');
+Insert into BL_Details values ('BL4','Analysing', 'Theme');
+
+Insert into BL_Details values ('BL5','Evaluating', 'Agree');
+Insert into BL_Details values ('BL5','Evaluating', 'Appraise');
+Insert into BL_Details values ('BL5','Evaluating', 'Assess');
+Insert into BL_Details values ('BL5','Evaluating', 'Award);
+Insert into BL_Details values ('BL5','Evaluating', 'Criteria');
+Insert into BL_Details values ('BL5','Evaluating', 'Criticize');
+Insert into BL_Details values ('BL5','Evaluating', 'Decide');
+Insert into BL_Details values ('BL5','Evaluating', 'Deduct');
+Insert into BL_Details values ('BL5','Evaluating', 'Defend');
+Insert into BL_Details values ('BL5','Evaluating', 'Determine');
+Insert into BL_Details values ('BL5','Evaluating', 'Disprove');
+Insert into BL_Details values ('BL5','Evaluating', 'Estimate');
+Insert into BL_Details values ('BL5','Evaluating', 'Evaluate');
+Insert into BL_Details values ('BL5','Evaluating', 'Explain');
+Insert into BL_Details values ('BL5','Evaluating', 'Importance');
+Insert into BL_Details values ('BL5','Evaluating', 'Influence');
+Insert into BL_Details values ('BL5','Evaluating', 'Interpet');
+Insert into BL_Details values ('BL5','Evaluating', 'Judge');
+Insert into BL_Details values ('BL5','Evaluating', 'Justify');
+Insert into BL_Details values ('BL5','Evaluating', 'Mark');
+Insert into BL_Details values ('BL5','Evaluating', 'Measure');
+Insert into BL_Details values ('BL5','Evaluating', 'Opinion');
+Insert into BL_Details values ('BL5','Evaluating', 'Perceive');
+Insert into BL_Details values ('BL5','Evaluating', 'Prove');
+Insert into BL_Details values ('BL5','Evaluating', 'Prioritize');
+Insert into BL_Details values ('BL5','Evaluating', 'Prove');
+Insert into BL_Details values ('BL5','Evaluating', 'Rate');
+Insert into BL_Details values ('BL5','Evaluating', 'Recommended');
+Insert into BL_Details values ('BL5','Evaluating', 'Rule on');
+Insert into BL_Details values ('BL5','Evaluating', 'Select');
+Insert into BL_Details values ('BL5','Evaluating', 'Support');
+Insert into BL_Details values ('BL5','Evaluating', 'Value');
+							
+Insert into BL_Details values ('BL6','Creating', 'Adapt');
+Insert into BL_Details values ('BL6','Creating', 'Build');
+Insert into BL_Details values ('BL6','Creating', 'Change');
+Insert into BL_Details values ('BL6','Creating', 'Choose');
+Insert into BL_Details values ('BL6','Creating', 'Combine');
+Insert into BL_Details values ('BL6','Creating', 'Compile');
+Insert into BL_Details values ('BL6','Creating', 'Compose');
+Insert into BL_Details values ('BL6','Creating', 'Construct');
+Insert into BL_Details values ('BL6','Creating', 'Create');
+Insert into BL_Details values ('BL6','Creating', 'Delete');
+Insert into BL_Details values ('BL6','Creating', 'Design');
+Insert into BL_Details values ('BL6','Creating', 'Develop');
+Insert into BL_Details values ('BL6','Creating', 'Discuss');
+Insert into BL_Details values ('BL6','Creating', 'Elaborate');
+Insert into BL_Details values ('BL6','Creating', 'Estimate');
+Insert into BL_Details values ('BL6','Creating', 'Formulate');
+Insert into BL_Details values ('BL6','Creating', 'Happen');
+Insert into BL_Details values ('BL6','Creating', 'Imagine');
+Insert into BL_Details values ('BL6','Creating', 'Improve');
+Insert into BL_Details values ('BL6','Creating', 'Invent');
+Insert into BL_Details values ('BL6','Creating', 'Make up');
+Insert into BL_Details values ('BL6','Creating', 'Maximize');
+Insert into BL_Details values ('BL6','Creating', 'Minimize');
+Insert into BL_Details values ('BL6','Creating', 'Modify');
+Insert into BL_Details values ('BL6','Creating', 'Original');
+Insert into BL_Details values ('BL6','Creating', 'Plan');
+Insert into BL_Details values ('BL6','Creating', 'Predict');
+Insert into BL_Details values ('BL6','Creating', 'Propose');
+Insert into BL_Details values ('BL6','Creating', 'Solution');
+Insert into BL_Details values ('BL6','Creating', 'Test');
+Insert into BL_Details values ('BL6','Creating', 'Theory');
+
+
+Insert into Course_Details values ('XC7451','Combinatorics and Graph Theory');
+Insert into Course_Details values ('XC7452','Computer Architecture');
+Insert into Course_Details values ('XC7453','Java and Internet Programming');
+Insert into Course_Details values ('XC7454','Operating System');
+Insert into Course_Details values ('XC7455','Theory of Computations');
+Insert into Course_Details values ('XT7451','Cryptography and Data Security');
+
+Insert into Course_Details values ('MA7551','Applied Statistics');
+Insert into Course_Details values ('XC7551','Computer Networks');
+Insert into Course_Details values ('XC7552','Design and Analysis of Algorithms');
+Insert into Course_Details values ('XC7553','Software Engineering');
+Insert into Course_Details values ('XT7073','Digital Image Processing');
+Insert into Course_Details values ('XT7551','Data Mining and Warehousing');
+
+Insert into Course_Details values ('GE7651','Environmental Science and Engineering');
+Insert into Course_Details values ('MA7651','Probability Queuing Theory and Reliability');
+Insert into Course_Details values ('XC7075','Intellectual Property Rights');
+Insert into Course_Details values ('XC7601','Network Programming');
+Insert into Course_Details values ('XC7651','Computer Graphics and Multimedia');
+Insert into Course_Details values ('XC7652','Object oriented Analysis and Design');
+
+Insert into Course_details values ('XC7076','Pattern Recognition');
+Insert into Course_details values ('XC7851','Machine Learning Techniques');
+Insert into Course_details values ('XT7851','Cloud Computing');
+Insert into Course_details values ('MA7851','Numerical Methods');
+Insert into Course_details values ('XC7852','Principles of Compiler Design');
+Insert into Course_details values ('XC7853','Software Testing and Quality Assurance');
+
+Insert into Course_Outcome values ('CO1','XC7851','set up a well-defined learning problem for a given task');
+Insert into Course_Outcome values ('CO2','XC7851','select and define a representation for data to be used as input to a machine learning algorithm');
+Insert into Course_Outcome values ('CO3','XC7851','select and define a representation for the model to be output by a machine learning algorithm');
+Insert into Course_Outcome values ('CO4','XC7851','compare different algorithms according to the properties of their inputs and outputs');
+Insert into Course_Outcome values ('CO5','XC7851','compare different algorithms in terms of similarities and differences in the computational methods used');
+Insert into Course_Outcome values ('CO6','XC7851','develop and describe algorithms to solve a learning problem in terms of the inputs, outputs and computational methods used');
+Insert into Course_Outcome values ('CO7','XC7851','express key concepts from the foundations of computational and statistical learning theory and demonstrate their appicability');
+Insert into Course_Outcome values ('CO8','XC7851','express knowledge of general capabilities and limitations of machine learning from computational and statistical theory');
+
+Insert into Course_Outcome values ('CO1','XC7852','Design and implement techniques used for optimization by a compiler.');
+Insert into Course_Outcome values ('CO2','XC7852','Modify the existing data structures of an open source optimizing compiler.');
+Insert into Course_Outcome values ('CO3','XC7852','Design and implement new data structures and algorithms for code optimisation.');
+
+Insert into Course_Outcome values ('CO1','XC7853','appreciate the importance of software quality assurance');
+Insert into Course_Outcome values ('CO2','XC7853','apply software testing techniques for information systems development');
+Insert into Course_Outcome values ('CO3','XC7853','know the inputs and deliverables of the testing process');
+
+Insert into Course_Outcome values ('CO1','XT7851','Articulate the main concepts, key technologies, strengths and limitations of cloud computing');
+Insert into Course_Outcome values ('CO2','XT7851','Identify the architecture, infrastructure and delivery models of cloud computing');
+Insert into Course_Outcome values ('CO3','XT7851','Explain the core issues of cloud computing such as security, privacy and interoperability');
+Insert into Course_Outcome values ('CO4','XT7851','Choose the appropriate technologies, algorithms and approaches for the related issues');
+
+Insert into Course_Outcome values ('CO1','XC7076','Classification of data and identifying patterns');
+Insert into Course_Outcome values ('CO2','XC7076','How to Extract feature set and select the features from given data set');
+
+Insert into Course_Outcome values ('CO1','XC7453','Understand the concept of OOP as well as the purpose and usage principles of inheritance,
+polymorphism, encapsulation and method overloading');
+Insert into Course_Outcome values ('CO2','XC7453','Identify classes, objects, members of a class and the relationships among them needed for a
+specific problem');
+Insert into Course_Outcome values ('CO3','XC7453','Create Java application programs using sound OOP practices (e.g., interfaces and APIs) and
+proper program structuring ');
+Insert into Course_Outcome values ('CO4','XC7453','Use testing and debugging tools to automatically discover errors of Java programs as well as
+use versioning tools for collaborative programming/editing');
+Insert into Course_Outcome values ('CO5','XC7453','Develop programs using the Java Collection API as well as the Java standard class library');
+
+Insert into Course_Outcome values ('CO1','XC7454','gain extensive knowledge on principles and modules of operating systems');
+Insert into Course_Outcome values ('CO2','XC7454','understand key mechanisms in design of operating systems modules');
+Insert into Course_Outcome values ('CO3','XC7454','understand process management, concurrent processes and threads, memory management,
+virtual memory concepts, deadlocks');
+Insert into Course_Outcome values ('CO4','XC7454','compare performance of processor scheduling algorithms - produce algorithmic solutions to
+process synchronization problems');
+Insert into Course_Outcome values ('CO5','XC7454','use modern operating system calls such as Linux process and synchronization libraries');
+Insert into Course_Outcome values ('CO6','XC7454','practice with operating system concepts such as process management, synchronization,
+networked processes and file systems');
+
+Insert into Course_Outcome values ('CO1','XC7551','Independently understand basic computer network technology');
+Insert into Course_Outcome values ('CO2','XC7551','Understand and explain Data Communications System and its components');
+Insert into Course_Outcome values ('CO3','XC7551','Identify the different types of network topologies and protocols');
+Insert into Course_Outcome values ('CO4','XC7551','Enumerate the layers of the OSI model and TCP/IP. Explain the function(s) of each layer');
+Insert into Course_Outcome values ('CO5','XC7551','Identify the different types of network devices and their functions within a network');
+Insert into Course_Outcome values ('CO6','XC7551','Understand and build the skills of subnetting and routing mechanisms');
+Insert into Course_Outcome values ('CO7','XC7551','Familiarze with the basic protocols of computer networks, and how they can be used to assist
+in network design and implementation');
+
+
+Insert into Course_Outcome values ('CO1','XC7652','Master the fundamental principles of OO programming');
+Insert into Course_Outcome values ('CO2','XC7652',' Master key principles in OO analysis, design, and development');
+Insert into Course_Outcome values ('CO3','XC7652','familiarize with the application of the Unified Modeling Language (UML) towards analysis and
+design');
+Insert into Course_Outcome values ('CO4','XC7652','Master common patterns in OO design and implement them');
+Insert into Course_Outcome values ('CO5','XC7652','familiarize with alternative development processes');
