@@ -29,8 +29,8 @@ Insert into BL_Details values ('Creating', 'Change');
 
 //CREATE TABLE DETAILS(DEPARTMENT varchar(20), BRANCH varchar(30), SEMESTER varchar(10), REGULATION varchar(8), SUBJECT_CODE_AND_TITLE varchar(50));
 
-CREATE TABLE users(user_name varchar(15),user_email varchar(30), user_password varchar(100));
+CREATE TABLE users(user_id SERIAL PRIMARY KEY,user_name varchar(15),user_email varchar(30), user_password varchar(100));
 
-CREATE TABLE qpdetails(user_id int(10),qp_info json NOT NULL,qp_details json NOT NULL);
+CREATE TABLE qpdetails(user_id int,qp_info json NOT NULL,qp_details json NOT NULL);
 
 INSERT INTO qpdetails VALUES(1,'{ "customer": "John Doe", "items": {"product": "Beer","qty": 6}}','{ "customer": "John Doe", "items": {"product": "Beer","qty":6},"it": {"product": "Beer","qty": 6},"ems": {"product": "Beer","qty": 6}}');
