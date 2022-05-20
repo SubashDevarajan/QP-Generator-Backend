@@ -16,10 +16,10 @@ getbldetails_all.get("/bldetails_all/", async (req, res) => {
 
 getbldetails_blLevel.get("/bldetails_blLevel/", async (req, res) => {
   try {
-    //const { id, username } = req.body;
-    console.log("hello");
-    const bl = await pool.query("Select * from bl_details Where bl_level=$1", [
-      req.body.bl_level,
+    const { level } = req.body;
+    console.log("hi");
+    const bl = await pool.query("Select * from bl_details Where levels=$1", [
+      req.body.level,
     ]);
     res.json(bl);
   } catch (error) {
