@@ -15,6 +15,7 @@ import setDetails from "./routes/form-post.js";
 import updateDetails from "./routes/modal-put.js";
 import getqp from "./routes/qp-get.js";
 import postqpDetails from "./routes/qp-post.js";
+import { authenticateToken } from "./middleware/authorization.js";
 
 dotenv.config();
 
@@ -38,7 +39,7 @@ app.use("/api/", getbldetails_all);
 app.use("/api/", getbldetails_blLevel);
 app.use("/api/", setDetails);
 app.use("/api/", updateDetails);
-app.use("/api/", getqp);
+app.use("/api/", authenticateToken, getqp);
 app.use("/api/", postqpDetails);
 
 app.listen(PORT, () => {
