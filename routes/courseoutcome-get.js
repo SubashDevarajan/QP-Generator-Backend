@@ -2,13 +2,13 @@ import express from "express";
 import pool from "../db.js";
 
 const getCourseoutcome = express();
-getCourseoutcome.get("/courseoutcome", async (req, res) => {
+getCourseoutcome.get("/courseoutcome/:id", async (req, res) => {
+  const { id } = req.params;
   try {
-    const { coursecode } = req.body;
     console.log("hi");
     const course = await pool.query(
-      "Select * from course_outcome Where coursecode=$1",
-      [req.body.coursecode]
+      "Select * from course_outcome Where coursecode = $1",
+      [id]
     );
     res.json(course);
   } catch (error) {
