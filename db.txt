@@ -2,6 +2,8 @@ CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CourseName varchar(150),PRIMA
 CREATE TABLE COURSE_OUTCOME(Levels varchar(5),CourseCode varchar(10),CourseOutcomes varchar(500),FOREIGN KEY (CourseCode) REFERENCES Course_Details(CourseCode));
 CREATE TABLE BL_DETAILS(Levels varchar(5),BL_LEVELS varchar(15), KEYWORDS varchar(20));
 
+CREATE TABLE OUTCOME(CourseCode varchar(10),CourseName varchar(150),outcomes json NOT NULL);
+
 //CREATE TABLE DETAILS(DEPARTMENT varchar(20), BRANCH varchar(30), SEMESTER varchar(10), REGULATION varchar(8), SUBJECT_CODE_AND_TITLE varchar(50));
 
 CREATE TABLE users(user_id SERIAL PRIMARY KEY,user_name varchar(15),user_email varchar(30), user_password varchar(100));
@@ -241,3 +243,9 @@ Insert into Course_Outcome values ('CO3','XC7652','familiarize with the applicat
 design');
 Insert into Course_Outcome values ('CO4','XC7652','Master common patterns in OO design and implement them');
 Insert into Course_Outcome values ('CO5','XC7652','familiarize with alternative development processes');
+
+
+Insert into outcome values('XC7851','Machine Learning Techniques','{"CO1":"set up a well-defined learning problem for a given task","CO2":"select and define a representation for data to be used as input to a machine learning algorithm","CO3":"select and define a representation for the model to be output by a machine learning algorithm","CO4":"compare different algorithms according to the properties of their inputs and outputs"}')
+
+
+Insert into outcome values('XC7851','Machine Learning Techniques','{"CO1":"ABCDEF","CO2":"ABCDEF"}')

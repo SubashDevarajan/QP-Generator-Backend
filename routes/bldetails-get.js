@@ -5,8 +5,7 @@ const getbldetails_blLevel = express();
 
 getbldetails_all.get("/bldetails_all/", async (req, res) => {
   try {
-    //const { id, username } = req.body;
-    console.log("hello");
+    console.log("Get all BL details");
     const bl = await pool.query("Select * from bl_details");
     res.json(bl);
   } catch (error) {
@@ -17,6 +16,7 @@ getbldetails_all.get("/bldetails_all/", async (req, res) => {
 getbldetails_blLevel.get("/bldetails_blLevel/:id", async (req, res) => {
   const { id } = req.params;
   try {
+    console.log("Get specific BL details");
     const bl = await pool.query("Select * from bl_details Where levels=$1",[id]);
     res.json(bl);
   } catch (error) {

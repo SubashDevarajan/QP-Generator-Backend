@@ -5,7 +5,7 @@ const getCourseoutcome = express();
 getCourseoutcome.get("/courseoutcome/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    console.log("hi");
+    console.log("GET course outcome with coursecode");
     const course = await pool.query(
       "Select * from course_outcome Where coursecode = $1",
       [id]
