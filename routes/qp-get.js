@@ -4,8 +4,7 @@ import pool from "../db.js";
 const getqp = express();
 getqp.get("/qp", async (req, res) => {
   try {
-    //const { id, username } = req.body;
-    console.log("hello");
+    console.log("qp details get");
     const qp = await pool.query("Select * from qpdetails");
     res.json(qp);
   } catch (error) {
