@@ -19,6 +19,7 @@ import { authenticateToken } from "./middleware/authorization.js";
 import updateCourseOutcome from "./routes/courseoutcome-put.js";
 import postDetails from "./routes/courseoutcome-post.js";
 import getCourse from "./routes/admin.js";
+import postCoursename from "./routes/coursename-post.js";
 
 dotenv.config();
 
@@ -37,6 +38,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", usersRouter);
 app.use("/api/", getUsers);
 app.use("/api/", getCoursename);
+app.use("/api/", postCoursename);
 app.use("/api/", getCourseoutcome);
 app.use("/api/", updateCourseOutcome);
 app.use("/api/", postDetails);
