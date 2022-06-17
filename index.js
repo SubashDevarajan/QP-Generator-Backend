@@ -48,7 +48,7 @@ app.use("/api/", setDetails);
 app.use("/api/", updateDetails);
 app.use("/api/", postqpDetails);
 app.use("/api/", getCourse);
-app.use("/api/", authenticateToken, getqp);
+// app.use("/api/", authenticateToken, getqp);
 
 app.listen(PORT, () => {
   console.log(`Server is Listening on port:${PORT}`);

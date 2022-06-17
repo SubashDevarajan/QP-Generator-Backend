@@ -8,7 +8,7 @@ postqpDetails.post("/postqp", async (req, res) => {
     console.log("Qp details post");
     const { user_id, qp_info, qp_details } = req.body;
     const newDetails = await pool.query(
-      "INSERT INTO qpdetails (user_id,qp_info,qp_details) VALUES ($1,$2,$3) RETURNING *",
+      "INSERT INTO qpdetails (user_id,qp_info,qp_details) VALUES ($1,$2,$3) RETURNING qp_id",
       [user_id, qp_info, qp_details]
     );
     res.json(newDetails.rows);
