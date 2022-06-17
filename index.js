@@ -20,6 +20,9 @@ import updateCourseOutcome from "./routes/courseoutcome-put.js";
 import postDetails from "./routes/courseoutcome-post.js";
 import getCourse from "./routes/admin.js";
 import postCoursename from "./routes/coursename-post.js";
+import putqpDetails from "./routes/qp-put.js";
+import putCoursename from "./routes/coursename-put.js";
+import deleteCoursename from "./routes/coursename-delete.js";
 
 dotenv.config();
 
@@ -39,6 +42,8 @@ app.use("/api/user", usersRouter);
 app.use("/api/", getUsers);
 app.use("/api/", getCoursename);
 app.use("/api/", postCoursename);
+app.use("/api/", putCoursename);
+app.use("/api/", deleteCoursename);
 app.use("/api/", getCourseoutcome);
 app.use("/api/", updateCourseOutcome);
 app.use("/api/", postDetails);
@@ -47,6 +52,7 @@ app.use("/api/", getbldetails_blLevel);
 app.use("/api/", setDetails);
 app.use("/api/", updateDetails);
 app.use("/api/", postqpDetails);
+app.use("/api/", putqpDetails);
 app.use("/api/", getCourse);
 app.use("/api/", authenticateToken, getqp);
 
