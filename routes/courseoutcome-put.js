@@ -4,12 +4,12 @@ import pool from "../db.js";
 const updateCourseOutcome = express();
 
 updateCourseOutcome.put("/updateCourseOutcome/:id", async (req, res) => {
-    const id = req.params.id;
-    const courseoutcome = req.body;
+  const id = req.params.id;
+  const courseoutcomes = req.body;
   try {
     const updateDetails = await pool.query(
-      "UPDATE course_outcome SET cousename=$1 WHERE coursecode=$2 RETURNING *",
-      [req.body.courseoutcome, id]
+      "UPDATE course_outcome SET courseoutcomes=$1 WHERE coursecode=$2 RETURNING *",
+      [courseoutcomes, id]
     );
     res.json(updateDetails);
   } catch (error) {
