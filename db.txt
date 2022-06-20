@@ -1,251 +1,254 @@
 CREATE TABLE COURSE_DETAILS(CourseCode varchar(10),CourseName varchar(150),PRIMARY KEY(CourseCode));
 CREATE TABLE COURSE_OUTCOME(Levels varchar(5),CourseCode varchar(10),CourseOutcomes varchar(500),FOREIGN KEY (CourseCode) REFERENCES Course_Details(CourseCode));
 CREATE TABLE BL_DETAILS(Levels varchar(5),BL_LEVELS varchar(15), KEYWORDS varchar(20));
-
-CREATE TABLE OUTCOME(CourseCode varchar(10),CourseName varchar(150),outcomes json NOT NULL);
-
-//CREATE TABLE DETAILS(DEPARTMENT varchar(20), BRANCH varchar(30), SEMESTER varchar(10), REGULATION varchar(8), SUBJECT_CODE_AND_TITLE varchar(50));
-
 CREATE TABLE users(user_id SERIAL PRIMARY KEY,user_name varchar(15),user_email varchar(30), user_password varchar(100));
+CREATE TABLE qpdetails(user_id int,qp_id int Generated Always as IDENTITY,qp_info json NOT NULL,qp_details json NOT NULL);
 
-CREATE TABLE qpdetails(user_id int,qp_info json NOT NULL,qp_details json NOT NULL);
+Insert into BL_Details values 
+('L1','Remembering', 'Choose'),
+('L1','Remembering', 'Draw'),
+('L1','Remembering', 'Describe'),
+('L1','Remembering', 'Define'),
+('L1','Remembering', 'Find'),
+('L1','Remembering', 'How'),
+('L1','Remembering', 'Label'),
+('L1','Remembering', 'List'),
+('L1','Remembering', 'Match'),
+('L1','Remembering', 'Name'),
+('L1','Remembering', 'Omit'),
+('L1','Remembering', 'Recall'),
+('L1','Remembering', 'Relate'),
+('L1','Remembering', 'Select'),
+('L1','Remembering', 'Show'),
+('L1','Remembering', 'Spell'),
+('L1','Remembering', 'Tell'),
+('L1','Remembering', 'What'),
+('L1','Remembering', 'When'),
+('L1','Remembering', 'Where'),
+('L1','Remembering', 'Which'),
+('L1','Remembering', 'Who'),
+('L1','Remembering', 'Why'),
+('L2','Understanding', 'Classify'),
+('L2','Understanding', 'Compare'),
+('L2','Understanding', 'Contrast'),
+('L2','Understanding', 'Demonstrate'),
+('L2','Understanding', 'Explain'),
+('L2','Understanding', 'Extend'),
+('L2','Understanding', 'Illustrate'),
+('L2','Understanding', 'Outline'),
+('L2','Understanding', 'Infer'),
+('L2','Understanding', 'Relate'),
+('L2','Understanding', 'Rephrase'),
+('L2','Understanding', 'Show'),
+('L2','Understanding', 'Summarize'),
+('L2','Understanding', 'Translate'),
+('L3','Applying', 'Apply'),
+('L3','Applying', 'Build'),
+('L3','Applying', 'Choose'),
+('L3','Applying', 'Construct'),
+('L3','Applying', 'Develop'),
+('L3','Applying', 'Experiment with'),
+('L3','Applying', 'Identify'),
+('L3','Applying', 'Interview'),
+('L3','Applying', 'Make use of'),
+('L3','Applying', 'Model'),
+('L3','Applying', 'Organize'),
+('L3','Applying', 'Plan'),
+('L3','Applying', 'Select'),
+('L3','Applying', 'Solve'),
+('L3','Applying', 'Utilize'),
+('L4','Analysing', 'Analyze'),
+('L4','Analysing', 'Assume'),
+('L4','Analysing', 'Categorize'),
+('L4','Analysing', 'Conclusion'),
+('L4','Analysing', 'Contrast'),
+('L4','Analysing', 'Discover'),
+('L4','Analysing', 'Dissect'),
+('L4','Analysing', 'Divide'),
+('L4','Analysing', 'Examine'),
+('L4','Analysing', 'Function'),
+('L4','Analysing', 'Inference'),
+('L4','Analysing', 'Inspect'),
+('L4','Analysing', 'List'),
+('L4','Analysing', 'Motive'),
+('L4','Analysing', 'Relationship'),
+('L4','Analysing', 'Simplify'),
+('L4','Analysing', 'Survey'),
+('L4','Analysing', 'Take part in'),
+('L4','Analysing', 'Test for'),
+('L4','Analysing', 'Theme'),
+('L5','Evaluating', 'Agree'),
+('L5','Evaluating', 'Appraise'),
+('L5','Evaluating', 'Assess'),
+('L5','Evaluating', 'Award'),
+('L5','Evaluating', 'Criteria'),
+('L5','Evaluating', 'Criticize'),
+('L5','Evaluating', 'Decide'),
+('L5','Evaluating', 'Deduct'),
+('L5','Evaluating', 'Defend'),
+('L5','Evaluating', 'Determine'),
+('L5','Evaluating', 'Disprove'),
+('L5','Evaluating', 'Estimate'),
+('L5','Evaluating', 'Evaluate'),
+('L5','Evaluating', 'Explain'),
+('L5','Evaluating', 'Importance'),
+('L5','Evaluating', 'Influence'),
+('L5','Evaluating', 'Interpet'),
+('L5','Evaluating', 'Judge'),
+('L5','Evaluating', 'Justify'),
+('L5','Evaluating', 'Mark'),
+('L5','Evaluating', 'Measure'),
+('L5','Evaluating', 'Opinion'),
+('L5','Evaluating', 'Perceive'),
+('L5','Evaluating', 'Prove'),
+('L5','Evaluating', 'Prioritize'),
+('L5','Evaluating', 'Prove'),
+('L5','Evaluating', 'Rate'),
+('L5','Evaluating', 'Recommended'),
+('L5','Evaluating', 'Rule on'),
+('L5','Evaluating', 'Select'),
+('L5','Evaluating', 'Support'),
+('L5','Evaluating', 'Value'),
+('L6','Creating', 'Adapt'),
+('L6','Creating', 'Build'),
+('L6','Creating', 'Change'),
+('L6','Creating', 'Choose'),
+('L6','Creating', 'Combine'),
+('L6','Creating', 'Compile'),
+('L6','Creating', 'Compose'),
+('L6','Creating', 'Construct'),
+('L6','Creating', 'Create'),
+('L6','Creating', 'Delete'),
+('L6','Creating', 'Design'),
+('L6','Creating', 'Develop'),
+('L6','Creating', 'Discuss'),
+('L6','Creating', 'Elaborate'),
+('L6','Creating', 'Estimate'),
+('L6','Creating', 'Formulate'),
+('L6','Creating', 'Happen'),
+('L6','Creating', 'Imagine'),
+('L6','Creating', 'Improve'),
+('L6','Creating', 'Invent'),
+('L6','Creating', 'Make up'),
+('L6','Creating', 'Maximize'),
+('L6','Creating', 'Minimize'),
+('L6','Creating', 'Modify'),
+('L6','Creating', 'Original'),
+('L6','Creating', 'Plan'),
+('L6','Creating', 'Predict'),
+('L6','Creating', 'Propose'),
+('L6','Creating', 'Solution'),
+('L6','Creating', 'Test'),
+('L6','Creating', 'Theory');
 
-INSERT INTO qpdetails VALUES(1,'{ "customer": "John Doe", "items": {"product": "Beer","qty": 6}}','{ "customer": "John Doe", "items": {"product": "Beer","qty":6},"it": {"product": "Beer","qty": 6},"ems": {"product": "Beer","qty": 6}}');
+Insert into Course_Details values 
+('XC5152','Problem Solving And C Programming'),
+('XC5251','Object Oriented Programming In C++'),
+('XC5252','Data Structures'),
+('XC5352','Microprocessor And Applications'),
+('XC5353','Operating Systems'),
+('XC5354','Signals And Systems'),
+('XC5451','Theory Of Computation'),
+('XC5452','Database Management Systems'),
+('XC5453','Java And Internet Programming'),
+('XC5454','Computer Networks'),
+('XT5501','Advanced Database Management Systems'),
+('XC5551','Software Engineering'),
+('XT5551','Data Warehousing And Mining'),
+('XC5552','Design And Analysis Of Algorithms'),
+('XT5601','Computer Graphics And Multimedia'),
+('XT5651','Web Technology'),
+('XC5652','Artificial Intelligence'),
+('XT5851','Big Data Analytics');
 
-Insert into BL_Details values ('BL1','Remembering', 'Choose');
-Insert into BL_Details values ('BL1','Remembering', 'Draw');
-Insert into BL_Details values ('BL1','Remembering', 'Describe');
-Insert into BL_Details values ('BL1','Remembering', 'Define');
-Insert into BL_Details values ('BL1','Remembering', 'Find');
-Insert into BL_Details values ('BL1','Remembering', 'How');
-Insert into BL_Details values ('BL1','Remembering', 'Label');
-Insert into BL_Details values ('BL1','Remembering', 'List');
-Insert into BL_Details values ('BL1','Remembering', 'Match');
-Insert into BL_Details values ('BL1','Remembering', 'Name');
-Insert into BL_Details values ('BL1','Remembering', 'Omit');
-Insert into BL_Details values ('BL1','Remembering', 'Recall');
-Insert into BL_Details values ('BL1','Remembering', 'Relate');
-Insert into BL_Details values ('BL1','Remembering', 'Select');
-Insert into BL_Details values ('BL1','Remembering', 'Show');
-Insert into BL_Details values ('BL1','Remembering', 'Spell');
-Insert into BL_Details values ('BL1','Remembering', 'Tell');
-Insert into BL_Details values ('BL1','Remembering', 'What');
-Insert into BL_Details values ('BL1','Remembering', 'When');
-Insert into BL_Details values ('BL1','Remembering', 'Where');
-Insert into BL_Details values ('BL1','Remembering', 'Which');
-Insert into BL_Details values ('BL1','Remembering', 'Who');
-Insert into BL_Details values ('BL1','Remembering', 'Why');
-
-Insert into BL_Details values ('BL2','Understanding', 'Classify');
-Insert into BL_Details values ('BL2','Understanding', 'Compare');
-Insert into BL_Details values ('BL2','Understanding', 'Contrast');
-Insert into BL_Details values ('BL2','Understanding', 'Demonstrate');
-Insert into BL_Details values ('BL2','Understanding', 'Explain');
-Insert into BL_Details values ('BL2','Understanding', 'Extend');
-Insert into BL_Details values ('BL2','Understanding', 'Illustrate');
-Insert into BL_Details values ('BL2','Understanding', 'Outline');
-Insert into BL_Details values ('BL2','Understanding', 'Infer');
-Insert into BL_Details values ('BL2','Understanding', 'Relate');
-Insert into BL_Details values ('BL2','Understanding', 'Rephrase');
-Insert into BL_Details values ('BL2','Understanding', 'Show');
-Insert into BL_Details values ('BL2','Understanding', 'Summarize');
-Insert into BL_Details values ('BL2','Understanding', 'Translate');
-
-Insert into BL_Details values ('BL3','Applying', 'Apply');
-Insert into BL_Details values ('BL3','Applying', 'Build');
-Insert into BL_Details values ('BL3','Applying', 'Choose');
-Insert into BL_Details values ('BL3','Applying', 'Construct');
-Insert into BL_Details values ('BL3','Applying', 'Develop');
-Insert into BL_Details values ('BL3','Applying', 'Experiment with');
-Insert into BL_Details values ('BL3','Applying', 'Identify');
-Insert into BL_Details values ('BL3','Applying', 'Interview');
-Insert into BL_Details values ('BL3','Applying', 'Make use of');
-Insert into BL_Details values ('BL3','Applying', 'Model');
-Insert into BL_Details values ('BL3','Applying', 'Organize');
-Insert into BL_Details values ('BL3','Applying', 'Plan');
-Insert into BL_Details values ('BL3','Applying', 'Select');
-Insert into BL_Details values ('BL3','Applying', 'Solve');
-Insert into BL_Details values ('BL3','Applying', 'Utilize');
-
-Insert into BL_Details values ('BL4','Analysing', 'Analyze');
-Insert into BL_Details values ('BL4','Analysing', 'Assume');
-Insert into BL_Details values ('BL4','Analysing', 'Categorize');
-Insert into BL_Details values ('BL4','Analysing', 'Conclusion');
-Insert into BL_Details values ('BL4','Analysing', 'Contrast');
-Insert into BL_Details values ('BL4','Analysing', 'Discover');
-Insert into BL_Details values ('BL4','Analysing', 'Dissect');
-Insert into BL_Details values ('BL4','Analysing', 'Divide');
-Insert into BL_Details values ('BL4','Analysing', 'Examine');
-Insert into BL_Details values ('BL4','Analysing', 'Function');
-Insert into BL_Details values ('BL4','Analysing', 'Inference');
-Insert into BL_Details values ('BL4','Analysing', 'Inspect');
-Insert into BL_Details values ('BL4','Analysing', 'List');
-Insert into BL_Details values ('BL4','Analysing', 'Motive');
-Insert into BL_Details values ('BL4','Analysing', 'Relationship');
-Insert into BL_Details values ('BL4','Analysing', 'Simplify');
-Insert into BL_Details values ('BL4','Analysing', 'Survey');
-Insert into BL_Details values ('BL4','Analysing', 'Take part in');
-Insert into BL_Details values ('BL4','Analysing', 'Test for');
-Insert into BL_Details values ('BL4','Analysing', 'Theme');
-
-Insert into BL_Details values ('BL5','Evaluating', 'Agree');
-Insert into BL_Details values ('BL5','Evaluating', 'Appraise');
-Insert into BL_Details values ('BL5','Evaluating', 'Assess');
-Insert into BL_Details values ('BL5','Evaluating', 'Award);
-Insert into BL_Details values ('BL5','Evaluating', 'Criteria');
-Insert into BL_Details values ('BL5','Evaluating', 'Criticize');
-Insert into BL_Details values ('BL5','Evaluating', 'Decide');
-Insert into BL_Details values ('BL5','Evaluating', 'Deduct');
-Insert into BL_Details values ('BL5','Evaluating', 'Defend');
-Insert into BL_Details values ('BL5','Evaluating', 'Determine');
-Insert into BL_Details values ('BL5','Evaluating', 'Disprove');
-Insert into BL_Details values ('BL5','Evaluating', 'Estimate');
-Insert into BL_Details values ('BL5','Evaluating', 'Evaluate');
-Insert into BL_Details values ('BL5','Evaluating', 'Explain');
-Insert into BL_Details values ('BL5','Evaluating', 'Importance');
-Insert into BL_Details values ('BL5','Evaluating', 'Influence');
-Insert into BL_Details values ('BL5','Evaluating', 'Interpet');
-Insert into BL_Details values ('BL5','Evaluating', 'Judge');
-Insert into BL_Details values ('BL5','Evaluating', 'Justify');
-Insert into BL_Details values ('BL5','Evaluating', 'Mark');
-Insert into BL_Details values ('BL5','Evaluating', 'Measure');
-Insert into BL_Details values ('BL5','Evaluating', 'Opinion');
-Insert into BL_Details values ('BL5','Evaluating', 'Perceive');
-Insert into BL_Details values ('BL5','Evaluating', 'Prove');
-Insert into BL_Details values ('BL5','Evaluating', 'Prioritize');
-Insert into BL_Details values ('BL5','Evaluating', 'Prove');
-Insert into BL_Details values ('BL5','Evaluating', 'Rate');
-Insert into BL_Details values ('BL5','Evaluating', 'Recommended');
-Insert into BL_Details values ('BL5','Evaluating', 'Rule on');
-Insert into BL_Details values ('BL5','Evaluating', 'Select');
-Insert into BL_Details values ('BL5','Evaluating', 'Support');
-Insert into BL_Details values ('BL5','Evaluating', 'Value');
-							
-Insert into BL_Details values ('BL6','Creating', 'Adapt');
-Insert into BL_Details values ('BL6','Creating', 'Build');
-Insert into BL_Details values ('BL6','Creating', 'Change');
-Insert into BL_Details values ('BL6','Creating', 'Choose');
-Insert into BL_Details values ('BL6','Creating', 'Combine');
-Insert into BL_Details values ('BL6','Creating', 'Compile');
-Insert into BL_Details values ('BL6','Creating', 'Compose');
-Insert into BL_Details values ('BL6','Creating', 'Construct');
-Insert into BL_Details values ('BL6','Creating', 'Create');
-Insert into BL_Details values ('BL6','Creating', 'Delete');
-Insert into BL_Details values ('BL6','Creating', 'Design');
-Insert into BL_Details values ('BL6','Creating', 'Develop');
-Insert into BL_Details values ('BL6','Creating', 'Discuss');
-Insert into BL_Details values ('BL6','Creating', 'Elaborate');
-Insert into BL_Details values ('BL6','Creating', 'Estimate');
-Insert into BL_Details values ('BL6','Creating', 'Formulate');
-Insert into BL_Details values ('BL6','Creating', 'Happen');
-Insert into BL_Details values ('BL6','Creating', 'Imagine');
-Insert into BL_Details values ('BL6','Creating', 'Improve');
-Insert into BL_Details values ('BL6','Creating', 'Invent');
-Insert into BL_Details values ('BL6','Creating', 'Make up');
-Insert into BL_Details values ('BL6','Creating', 'Maximize');
-Insert into BL_Details values ('BL6','Creating', 'Minimize');
-Insert into BL_Details values ('BL6','Creating', 'Modify');
-Insert into BL_Details values ('BL6','Creating', 'Original');
-Insert into BL_Details values ('BL6','Creating', 'Plan');
-Insert into BL_Details values ('BL6','Creating', 'Predict');
-Insert into BL_Details values ('BL6','Creating', 'Propose');
-Insert into BL_Details values ('BL6','Creating', 'Solution');
-Insert into BL_Details values ('BL6','Creating', 'Test');
-Insert into BL_Details values ('BL6','Creating', 'Theory');
-
-
-Insert into Course_Details values ('XC7451','Combinatorics and Graph Theory');
-Insert into Course_Details values ('XC7452','Computer Architecture');
-Insert into Course_Details values ('XC7453','Java and Internet Programming');
-Insert into Course_Details values ('XC7454','Operating System');
-Insert into Course_Details values ('XC7455','Theory of Computations');
-Insert into Course_Details values ('XT7451','Cryptography and Data Security');
-
-Insert into Course_Details values ('MA7551','Applied Statistics');
-Insert into Course_Details values ('XC7551','Computer Networks');
-Insert into Course_Details values ('XC7552','Design and Analysis of Algorithms');
-Insert into Course_Details values ('XC7553','Software Engineering');
-Insert into Course_Details values ('XT7073','Digital Image Processing');
-Insert into Course_Details values ('XT7551','Data Mining and Warehousing');
-
-Insert into Course_Details values ('GE7651','Environmental Science and Engineering');
-Insert into Course_Details values ('MA7651','Probability Queuing Theory and Reliability');
-Insert into Course_Details values ('XC7075','Intellectual Property Rights');
-Insert into Course_Details values ('XC7601','Network Programming');
-Insert into Course_Details values ('XC7651','Computer Graphics and Multimedia');
-Insert into Course_Details values ('XC7652','Object oriented Analysis and Design');
-
-Insert into Course_details values ('XC7076','Pattern Recognition');
-Insert into Course_details values ('XC7851','Machine Learning Techniques');
-Insert into Course_details values ('XT7851','Cloud Computing');
-Insert into Course_details values ('MA7851','Numerical Methods');
-Insert into Course_details values ('XC7852','Principles of Compiler Design');
-Insert into Course_details values ('XC7853','Software Testing and Quality Assurance');
-
-Insert into Course_Outcome values ('CO1','XC7851','set up a well-defined learning problem for a given task');
-Insert into Course_Outcome values ('CO2','XC7851','select and define a representation for data to be used as input to a machine learning algorithm');
-Insert into Course_Outcome values ('CO3','XC7851','select and define a representation for the model to be output by a machine learning algorithm');
-Insert into Course_Outcome values ('CO4','XC7851','compare different algorithms according to the properties of their inputs and outputs');
-Insert into Course_Outcome values ('CO5','XC7851','compare different algorithms in terms of similarities and differences in the computational methods used');
-Insert into Course_Outcome values ('CO6','XC7851','develop and describe algorithms to solve a learning problem in terms of the inputs, outputs and computational methods used');
-Insert into Course_Outcome values ('CO7','XC7851','express key concepts from the foundations of computational and statistical learning theory and demonstrate their appicability');
-Insert into Course_Outcome values ('CO8','XC7851','express knowledge of general capabilities and limitations of machine learning from computational and statistical theory');
-
-Insert into Course_Outcome values ('CO1','XC7852','Design and implement techniques used for optimization by a compiler.');
-Insert into Course_Outcome values ('CO2','XC7852','Modify the existing data structures of an open source optimizing compiler.');
-Insert into Course_Outcome values ('CO3','XC7852','Design and implement new data structures and algorithms for code optimisation.');
-
-Insert into Course_Outcome values ('CO1','XC7853','appreciate the importance of software quality assurance');
-Insert into Course_Outcome values ('CO2','XC7853','apply software testing techniques for information systems development');
-Insert into Course_Outcome values ('CO3','XC7853','know the inputs and deliverables of the testing process');
-
-Insert into Course_Outcome values ('CO1','XT7851','Articulate the main concepts, key technologies, strengths and limitations of cloud computing');
-Insert into Course_Outcome values ('CO2','XT7851','Identify the architecture, infrastructure and delivery models of cloud computing');
-Insert into Course_Outcome values ('CO3','XT7851','Explain the core issues of cloud computing such as security, privacy and interoperability');
-Insert into Course_Outcome values ('CO4','XT7851','Choose the appropriate technologies, algorithms and approaches for the related issues');
-
-Insert into Course_Outcome values ('CO1','XC7076','Classification of data and identifying patterns');
-Insert into Course_Outcome values ('CO2','XC7076','How to Extract feature set and select the features from given data set');
-
-Insert into Course_Outcome values ('CO1','XC7453','Understand the concept of OOP as well as the purpose and usage principles of inheritance,
-polymorphism, encapsulation and method overloading');
-Insert into Course_Outcome values ('CO2','XC7453','Identify classes, objects, members of a class and the relationships among them needed for a
-specific problem');
-Insert into Course_Outcome values ('CO3','XC7453','Create Java application programs using sound OOP practices (e.g., interfaces and APIs) and
-proper program structuring ');
-Insert into Course_Outcome values ('CO4','XC7453','Use testing and debugging tools to automatically discover errors of Java programs as well as
-use versioning tools for collaborative programming/editing');
-Insert into Course_Outcome values ('CO5','XC7453','Develop programs using the Java Collection API as well as the Java standard class library');
-
-Insert into Course_Outcome values ('CO1','XC7454','gain extensive knowledge on principles and modules of operating systems');
-Insert into Course_Outcome values ('CO2','XC7454','understand key mechanisms in design of operating systems modules');
-Insert into Course_Outcome values ('CO3','XC7454','understand process management, concurrent processes and threads, memory management,
-virtual memory concepts, deadlocks');
-Insert into Course_Outcome values ('CO4','XC7454','compare performance of processor scheduling algorithms - produce algorithmic solutions to
-process synchronization problems');
-Insert into Course_Outcome values ('CO5','XC7454','use modern operating system calls such as Linux process and synchronization libraries');
-Insert into Course_Outcome values ('CO6','XC7454','practice with operating system concepts such as process management, synchronization,
-networked processes and file systems');
-
-Insert into Course_Outcome values ('CO1','XC7551','Independently understand basic computer network technology');
-Insert into Course_Outcome values ('CO2','XC7551','Understand and explain Data Communications System and its components');
-Insert into Course_Outcome values ('CO3','XC7551','Identify the different types of network topologies and protocols');
-Insert into Course_Outcome values ('CO4','XC7551','Enumerate the layers of the OSI model and TCP/IP. Explain the function(s) of each layer');
-Insert into Course_Outcome values ('CO5','XC7551','Identify the different types of network devices and their functions within a network');
-Insert into Course_Outcome values ('CO6','XC7551','Understand and build the skills of subnetting and routing mechanisms');
-Insert into Course_Outcome values ('CO7','XC7551','Familiarze with the basic protocols of computer networks, and how they can be used to assist
-in network design and implementation');
-
-
-Insert into Course_Outcome values ('CO1','XC7652','Master the fundamental principles of OO programming');
-Insert into Course_Outcome values ('CO2','XC7652',' Master key principles in OO analysis, design, and development');
-Insert into Course_Outcome values ('CO3','XC7652','familiarize with the application of the Unified Modeling Language (UML) towards analysis and
-design');
-Insert into Course_Outcome values ('CO4','XC7652','Master common patterns in OO design and implement them');
-Insert into Course_Outcome values ('CO5','XC7652','familiarize with alternative development processes');
-
-
-Insert into outcome values('XC7851','Machine Learning Techniques','{"CO1":"set up a well-defined learning problem for a given task","CO2":"select and define a representation for data to be used as input to a machine learning algorithm","CO3":"select and define a representation for the model to be output by a machine learning algorithm","CO4":"compare different algorithms according to the properties of their inputs and outputs"}')
-
-
-Insert into outcome values('XC7851','Machine Learning Techniques','{"CO1":"ABCDEF","CO2":"ABCDEF"}')
+Insert into Course_Outcome values 
+('CO1','XC5152','Use flowcharts and pseudo code to represent program modules'),
+('CO2','XC5152','Formulate algorithm for simple problems'),
+('CO3','XC5152','Analyze different data types and arrays'),
+('CO4','XC5152','Able to develop logics, which will help them to create programs in C'),
+('CO5','XC5152','Write C program for simple applications'),
+('CO1','XC5251','Describe the procedural and object oriented paradigm with concepts of streams, classes,functions, data and objects'),
+('CO2','XC5251','Understand dynamic memory management techniques using pointers, constructors anddestructors'),
+('CO3','XC5251','Describe the concept of function overloading, operator overloading, virtual functions andpolymorphism'),
+('CO4','XC5251','Classify inheritance with the understanding of early and late binding, usage of exceptionhandling, generic programming'),
+('CO5','XC5251','Demonstrate the use of I/O stream classes, file handling and command line arguments'),
+('CO1','XC5252','Understand the properties of various data structures'),
+('CO2','XC5252','Identify the strengths and weaknesses of different data structures'),
+('CO3','XC5252','Understand the concept of various non-linear data structures'),
+('CO4','XC5252','Understand the properties of advanced tree structures'),
+('CO5','XC5252','Design and employ appropriate data structures for solving computing problems'),
+('CO1','XC5352','Learn the internal organization of some popular microprocessors/microcontrollers'),
+('CO2','XC5352','Learn hardware and software interaction and integration'),
+('CO3','XC5352','Learn the design of microprocessors based systems'),
+('CO4','XC5352','Learn the design of microcontrollers-based systems'),
+('CO5','XC5352','Design the processor with appropriate interface selection'),
+('CO1','XC5353','Gain extensive knowledge on principles and modules of operating systems'),
+('CO2','XC5353','Understand key mechanisms in design of operating systems modules'),
+('CO3','XC5353','Understand process management, concurrent processes and threads, memory management,virtual memory concepts, deadlocks'),
+('CO4','XC5353','Compare performance of processor scheduling algorithms - produce algorithmic solutions toprocess synchronization problems'),
+('CO5','XC5353','Use modern operating system calls such as Linux process and synchronization libraries'),
+('CO1','XC5354','Determine the performance of analog modulation schemes'),
+('CO2','XC5354','Determine the performance of systems for generation and detection of modulated analogsignals'),
+('CO3','XC5354','Determine the performance of analog communication systems'),
+('CO4','XC5354','Understand the characteristics of pulse amplitude modulation, pulse position and codemodulation systems'),
+('CO5','XC5354','Analyze the different shift keying techniques for modulation and transmission'),
+('CO1','XC5451','Design finite state automata to accept regular sets'),
+('CO2','XC5451','Form context free grammar to generate context free language and able to obtain its normal form'),
+('CO3','XC5451','Design pushdown automata to accept a context free language'),
+('CO4','XC5451','Design Turing machine to accept recursive enumerable language, to compute numbertheoretic functions and able to understand the limitation of Turing computing model'),
+('CO5','XC5451','Understand overall set theoretical relationship of formal languages'),
+('CO1','XC5452','Distinguish unary, binary, and ternary relationships and give a common example of each'),
+('CO2','XC5452','Compare and contrast the object oriented model with the E-R and EER models'),
+('CO3','XC5452','Explain the properties of relations and Discuss the first normal form, second normal form,and third normal form'),
+('CO4','XC5452','Use normalization to decompose our relation with anomalies into well structured relations'),
+('CO5','XC5452','Explain how to select an appropriate file organization by balancing various important designfactors'),
+('CO1','XC5453','Understand the concept of OOP as well as the purpose and usage principles of inheritance,polymorphism, encapsulation and method overloading'),
+('CO2','XC5453','Identify classes, objects, members of a class and the relationships among them needed for aspecific problem'),
+('CO3','XC5453','Create Java application programs using sound OOP practices (e. G. , interfaces and APIs) andproper program structuring (e. G. , by using access control identifies, automatic documentationthrough comments, error exception handling)'),
+('CO4','XC5453','Ensure security in the applications being developed'),
+('CO5','XC5453','Develop applications that are platform independent, language independent'),
+('CO1','XC5454','Identify the components required to build different types of networks'),
+('CO2','XC5454','Trace the flow of information from one node to another node in the network'),
+('CO3','XC5454','Identify the classes of Network address'),
+('CO4','XC5454','Choose functionalities at each layer for different applications'),
+('CO5','XC5454','Evaluate the protocols in network layer from QOS perspective'),
+('CO1','XT5501','Have a broad understanding of database concepts and database management systemsoftware'),
+('CO2','XT5501','Have a high-level understanding of major DBMS components and their function'),
+('CO3','XT5501','Able to model an application’s data requirements using conceptual modeling tools like ERdiagrams and design database schemas based on the conceptual model'),
+('CO4','XT5501','Able to write SQL commands to create tables and indexes, insert/update/delete data, andquery data in a relational DBMS'),
+('CO5','XT5501','Able to program a data-intensive application using DBMS APIs'),
+('CO1','XC5551','Perform background research and a feasibility study prior to embarking on a developmentproject'),
+('CO2','XC5551','Collect and analyse user requirements using a formalism such as UML, including businessprocess modeling'),
+('CO3','XC5551','Translate end-user requirements into system and software requirements, using e. G. UML'),
+('CO4','XC5551','Identify and apply appropriate software architectures and patterns to carry out high level design of a system'),
+('CO5','XC5551','Work in a team to implement a project plan, URD, SRD and ADD, by developing detaileddesigns and code'),
+('CO1','XT5551','Understand why there is a need for data warehouse in addition to traditional operational database systems'),
+('CO2','XT5551','Design a OLAP data model and understand the process required to construct'),
+('CO3','XT5551','Find some interesting rules along with preprocessing techniques in real time dataset'),
+('CO4','XT5551','Understand the details of different algorithms made available and commercial data miningsoftware'),
+('CO5','XT5551','Obtain hands-on experience with some popular data mining tools'),
+('CO1','XC5552','Describe the complexity of algorithm with appropriate asymptotic notations'),
+('CO2','XC5552','Use efficient sorting algorithms with comparison as the basic operation for solving sortingproblems'),
+('CO3','XC5552','Use the fundamental graph algorithms in solving optimization problems'),
+('CO4','XC5552','Use efficient string matching algorithms in string matching problems'),
+('CO5','XC5552','Able to recognize the complexity class of the given computational problems'),
+('CO1','XT5601','Create interactive graphics applications in C++ using one or more graphics applicationprogramming interfaces'),
+('CO2','XT5601','Write program functions to implement graphics primitives'),
+('CO3','XT5601','Demonstrate an understanding of the use of object hierarchy in graphics applications'),
+('CO4','XT5601','Write programs that demonstrate computer graphics animation'),
+('CO5','XT5601','Write programs that demonstrate 2D and 3D image processing techniques'),
+('CO1','XT5651','Design simple web pages using markup languages like HTML and XHTML'),
+('CO2','XT5651','Create dynamic web pages using DHTML and java script that is easy to navigate and use'),
+('CO3','XT5651','Program server side web pages that have to process request from client side web pages'),
+('CO4','XT5651','Represent web data using XML and develop web pages using JSP'),
+('CO5','XT5651','Understand various web services and how these web services interact'),
+('CO1','XC5652','Understand the different AI systems'),
+('CO2','XC5652','Use appropriate search algorithms for any AI problem'),
+('CO3','XC5652','Represent a problem using first order and predicate logic'),
+('CO4','XC5652','Provide the appropriate agent strategy to solve a given problem'),
+('CO5','XC5652','Design software agents to solve a problem'),
+('CO1','XT5851','Work with big data tools and its analysis techniques'),
+('CO2','XT5851','Design efficient algorithms for mining the data from large volumes'),
+('CO3','XT5851','Design an efficient recommendation system'),
+('CO4','XT5851','Design the tools for visualization'),
+('CO5','XT5851','Learn NoSQL databases and management');
