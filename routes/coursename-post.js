@@ -7,8 +7,12 @@ postCoursename.post("/coursepost", async (req, res) => {
     console.log("POST course details");
     const { coursecode, coursename } = req.body;
     const newDetails = await pool.query(
-      "INSERT INTO course_details (coursecode,coursename) VALUES ($1,$2) RETURNING *",
+      "INSERT INTO course_details (coursecode,coursename) VALUES ($1,$2) RETURNING *;",
       [coursecode, coursename]
+    );
+    const newDetailss = await pool.query(
+      "INSERT INTO course_outcome (levels,coursecode) values('CO1',$1) , ('CO2',$1) , ('CO3',$1) , ('CO4',$1), ('CO5',$1);",
+      [coursecode]
     );
     res.json(newDetails.rows);
   } catch (error) {

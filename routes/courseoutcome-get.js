@@ -7,7 +7,7 @@ getCourseoutcome.get("/courseoutcome/:id", async (req, res) => {
   try {
     console.log("GET course outcome with coursecode");
     const course = await pool.query(
-      "Select * from course_outcome Where coursecode = $1",
+      "Select * from course_outcome Where coursecode = $1 order by levels",
       [id]
     );
     res.json(course);

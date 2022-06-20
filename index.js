@@ -23,6 +23,8 @@ import postCoursename from "./routes/coursename-post.js";
 import putqpDetails from "./routes/qp-put.js";
 import putCoursename from "./routes/coursename-put.js";
 import deleteCoursename from "./routes/coursename-delete.js";
+import getqpid from "./routes/qpId-get.js";
+import deleteQp from "./routes/qp-delete.js";
 
 dotenv.config();
 
@@ -43,7 +45,7 @@ app.use("/api/", getUsers);
 app.use("/api/", getCoursename);
 app.use("/api/", postCoursename);
 app.use("/api/", putCoursename);
-app.use("/api/", deleteCoursename);
+app.use("/api/",deleteCoursename);
 app.use("/api/", getCourseoutcome);
 app.use("/api/", updateCourseOutcome);
 app.use("/api/", postDetails);
@@ -54,7 +56,9 @@ app.use("/api/", updateDetails);
 app.use("/api/", postqpDetails);
 app.use("/api/", putqpDetails);
 app.use("/api/", getCourse);
-// app.use("/api/", authenticateToken, getqp);
+app.use("/api/", getqp);
+app.use("/api/", getqpid);
+app.use("/api/",deleteQp);
 
 app.listen(PORT, () => {
   console.log(`Server is Listening on port:${PORT}`);
